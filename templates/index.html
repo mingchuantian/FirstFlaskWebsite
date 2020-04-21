@@ -1,7 +1,23 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
 
 {% block head %}
-	{% block title %}My first Flask website{% endblock%}
+{{ super() }}
 {% endblock %}
+
+{% block title %}My first Flask website{% endblock %}
+
+
 {% block body %}
-<h1> Hello! </h1>
+{{ super() }}
+{% endblock %}
+
+{% block navselect %}
+<li class="active"><a href="index.html">Home</a></li>
+{% endblock %}
+
+{% block content %}
+<h1> Hello! {% if name %}{{name}}{% else %}Stranger{% endif %}!</h1>
+{{ wtf.quick_form(myform)}}
 {% endblock %}
