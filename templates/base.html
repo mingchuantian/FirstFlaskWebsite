@@ -32,7 +32,14 @@
 
 		<article>
 			{% block content %}
-
+			<div class="container">
+				<!---There is a for loop because message will display each time flash() is invoked -->
+				{% for message in get_flashed_messages() %}
+				<div class="alert alert-warning">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					{{ message }}
+				</div>
+				{% endfor %}
 			{% endblock %}
 		</article>
 		{% endblock %}

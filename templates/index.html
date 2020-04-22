@@ -18,6 +18,7 @@
 {% endblock %}
 
 {% block content %}
+{{ super() }}
 <h1> Hello! {% if name %}{{name}}{% else %}Stranger{% endif %}!</h1>
 {{ wtf.quick_form(myform)}}
 {% endblock %}
